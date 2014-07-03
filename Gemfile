@@ -12,9 +12,12 @@ gem 'slim-rails'
 gem 'environs'
 gem 'ops'
 gem 'simple_form'
+gem 'versionist'
+
 
 # MAYBE REPLACE THIS??? IDK...
-gem 'sqlite3'
+# gem 'sqlite3'
+gem 'mysql2'
 
 group :production do
   gem 'sentry-raven'
@@ -30,4 +33,8 @@ group :development do
   gem 'quiet_assets'
   gem 'rubocop'
   gem 'rails_layout'
+  gem 'foreman'
+  gem 'annotate'
+  gem 'jazz_hands'
+  gem 'rspec_api_blueprint'
 end

@@ -1,6 +1,8 @@
 h1 Listing applications
 
-table
+= link_to 'New Application', new_application_path, class: "btn btn-primary btn-lg"
+
+table#app_index.table.table-striped.table-hover
   thead
     tr
       th Name
@@ -18,10 +20,8 @@ table
         td = application.description
         td = application.host_group
         td = application.metadata
-        td = link_to 'Show', application
-        td = link_to 'Edit', edit_application_path(application)
-        td = link_to 'Destroy', application, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Show', application, class: "btn btn-primary"
+        td = link_to 'Edit', edit_application_path(application), class: "btn btn-info"
+        td = link_to 'Destroy', application, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger"
 
 br
-
-= link_to 'New Application', new_application_path
