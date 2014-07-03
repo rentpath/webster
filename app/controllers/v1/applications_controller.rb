@@ -1,4 +1,4 @@
-class ApplicationsController < ApplicationController
+class V1::ApplicationsController < V1::BaseController
   before_action :set_application, only: [:show, :edit, :update, :destroy]
 
   # GET /applications

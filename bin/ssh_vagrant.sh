@@ -1,0 +1,1 @@
+ssh deploy@127.0.0.1 -p 2222 -o Compression=yes -o DSAAuthentication=yes -o LogLevel=FATAL -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o IdentitiesOnly=yes -i /Users/zph/.vagrant.d/boxes/rentpath/0/virtualbox/include/conf/rentpath-idg-id_rsa -o ForwardAgent=yes

@@ -36,5 +36,5 @@ group :development do
   gem 'foreman'
   gem 'annotate'
   gem 'jazz_hands'
-  gem 'rspec_api_blueprint'
+  # gem 'rspec_api_blueprint'
 end

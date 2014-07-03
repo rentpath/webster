@@ -179,8 +179,6 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.0)
-    rspec_api_blueprint (0.0.8)
-      rspec-rails
     rubocop (0.23.0)
       json (>= 1.7.7, < 2)
       parser (~> 2.1.9)
@@ -271,7 +269,6 @@ DEPENDENCIES
   rails_layout
   rake
   rspec-rails
-  rspec_api_blueprint
   rubocop
   sass-rails (~> 4.0.3)
   sentry-raven
