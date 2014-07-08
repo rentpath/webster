@@ -7,6 +7,7 @@
 #  payload    :text
 #  created_at :datetime
 #  updated_at :datetime
+#  repo_id    :integer
 #
 
 class Hook < ActiveRecord::Base

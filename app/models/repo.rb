@@ -9,6 +9,7 @@
 #  public       :boolean          default(FALSE)
 #  created_at   :datetime
 #  updated_at   :datetime
+#  app_id       :integer
 #
 
 class Repo < ActiveRecord::Base
