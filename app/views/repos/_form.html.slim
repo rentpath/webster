@@ -1,0 +1,21 @@
+= form_for @repo do |f|
+  - if @repo.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@repo.errors.count, "error")} prohibited this repo from being saved:"
+      ul
+        - @repo.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :organization
+    = f.text_field :organization
+  .field
+    = f.label :full_name
+    = f.text_field :full_name
+  .field
+    = f.label :public
+    = f.check_box :public
+  .actions = f.submit 'Save'

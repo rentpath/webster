@@ -14,6 +14,7 @@
 #
 
 class App < ActiveRecord::Base
+  has_one :repo, dependent: :destroy
   serialize :metadata
   # Metadata should be json
 end

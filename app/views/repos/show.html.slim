@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @repo.name
+p
+  strong Organization:
+  = @repo.organization
+p
+  strong Full name:
+  = @repo.full_name
+p
+  strong Public:
+  = @repo.public
+
+= link_to 'Edit', edit_repo_path(@repo)
+'|
+= link_to 'Back', repos_path
