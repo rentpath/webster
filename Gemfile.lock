@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/primedia/rspec_api_blueprint.git
+  revision: ab104832f650d678644ae6e0b94ce7fe7a9c01c1
+  specs:
+    rspec_api_blueprint (0.0.8)
+      rspec-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -30,6 +37,9 @@ GEM
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
+    approvals (0.0.16)
+      nokogiri (~> 1.6)
+      thor (~> 0.18)
     arel (5.0.1.20140414130214)
     ast (2.0.0)
     awesome_print (1.2.0)
@@ -63,7 +73,7 @@ GEM
     dotenv-deployment (0.0.2)
     environs (1.1.0)
     erubis (2.7.0)
-    execjs (2.2.0)
+    execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     foreman (0.74.0)
@@ -73,7 +83,7 @@ GEM
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
       posix-spawn (~> 0.3.6)
-    hashie (3.0.0)
+    hashie (3.1.0)
     hike (1.2.3)
     hirb (0.7.2)
     i18n (0.6.9)
@@ -92,7 +102,7 @@ GEM
     jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
-    jquery-rails (3.1.0)
+    jquery-rails (3.1.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
@@ -102,14 +112,17 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25.1)
-    minitest (5.3.4)
+    mini_portile (0.6.0)
+    minitest (5.3.5)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     mysql2 (0.3.16)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     ops (0.5.1)
       sinatra (>= 1.2.0)
       sinatra-respond_to (>= 0.7.0)
-    parser (2.1.9)
+    parser (2.2.0.pre.3)
       ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
     polyglot (0.3.5)
@@ -119,9 +132,9 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pry-debugger (0.2.2)
+    pry-debugger (0.2.3)
       debugger (~> 1.3)
-      pry (~> 0.9.10)
+      pry (>= 0.9.10, < 0.11.0)
     pry-doc (0.4.6)
       pry (>= 0.9)
       yard (>= 0.8)
@@ -137,7 +150,7 @@ GEM
     pry-stack_explorer (0.4.9.1)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
-    quiet_assets (1.0.2)
+    quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-protection (1.5.3)
@@ -163,25 +176,24 @@ GEM
     rainbow (2.0.0)
     raindrops (0.13.0)
     rake (10.3.2)
-    rspec-core (3.0.1)
-      rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.1)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.0.0)
-    rspec-mocks (3.0.1)
-      rspec-support (~> 3.0.0)
-    rspec-rails (3.0.1)
+    rspec-collection_matchers (1.0.0)
+      rspec-expectations (>= 2.99.0.beta1)
+    rspec-core (2.99.1)
+    rspec-expectations (2.99.1)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-mocks (2.99.1)
+    rspec-rails (2.99.0)
       actionpack (>= 3.0)
+      activemodel (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.0.0)
-      rspec-expectations (~> 3.0.0)
-      rspec-mocks (~> 3.0.0)
-      rspec-support (~> 3.0.0)
-    rspec-support (3.0.0)
-    rubocop (0.23.0)
+      rspec-collection_matchers
+      rspec-core (~> 2.99.0)
+      rspec-expectations (~> 2.99.0)
+      rspec-mocks (~> 2.99.0)
+    rubocop (0.24.1)
       json (>= 1.7.7, < 2)
-      parser (~> 2.1.9)
+      parser (>= 2.2.0.pre.3, < 3.0)
       powerpack (~> 0.0.6)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
@@ -205,7 +217,7 @@ GEM
       tilt (~> 1.3, >= 1.3.4)
     sinatra-respond_to (0.9.0)
       sinatra (~> 1.3)
-    slim (2.0.2)
+    slim (2.0.3)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
     slim-rails (2.1.5)
@@ -224,7 +236,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    temple (0.6.7)
+    temple (0.6.8)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -253,6 +265,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  approvals
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
@@ -268,7 +281,8 @@ DEPENDENCIES
   rails (= 4.1.1)
   rails_layout
   rake
-  rspec-rails
+  rspec-rails (< 3.0.0)
+  rspec_api_blueprint!
   rubocop
   sass-rails (~> 4.0.3)
   sentry-raven

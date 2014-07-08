@@ -14,7 +14,6 @@ gem 'ops'
 gem 'simple_form'
 gem 'versionist'
 
-
 # MAYBE REPLACE THIS??? IDK...
 # gem 'sqlite3'
 gem 'mysql2'
@@ -26,7 +25,8 @@ end
 group :development do
   gem 'rake'
   gem 'spring'
-  gem 'rspec-rails'
+  gem 'rspec-rails', "< 3.0.0"
+  gem 'rspec_api_blueprint', require: false, github: 'primedia/rspec_api_blueprint'
   gem 'pry-debugger'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -36,5 +36,5 @@ group :development do
   gem 'foreman'
   gem 'annotate'
   gem 'jazz_hands'
-  # gem 'rspec_api_blueprint'
+  gem 'approvals'
 end
