@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @app.name
+p
+  strong Description:
+  = @app.description
+p
+  strong Host group:
+  = @app.host_group
+p
+  strong Metadata:
+  = @app.metadata
+
+= link_to 'Edit', edit_app_path(@app)
+'|
+= link_to 'Back', apps_path

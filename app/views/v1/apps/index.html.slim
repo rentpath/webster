@@ -1,0 +1,27 @@
+h1 Listing apps
+
+= link_to 'New App', new_app_path, class: "btn btn-primary btn-lg"
+
+table#app_index.table.table-striped.table-hover
+  thead
+    tr
+      th Name
+      th Description
+      th Host group
+      th Metadata
+      th
+      th
+      th
+
+  tbody
+    - @apps.each do |app|
+      tr
+        td = app.name
+        td = app.description
+        td = app.host_group
+        td = app.metadata
+        td = link_to 'Show', app, class: "btn btn-primary"
+        td = link_to 'Edit', edit_app_path(app), class: "btn btn-info"
+        td = link_to 'Destroy', app, data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger"
+
+br

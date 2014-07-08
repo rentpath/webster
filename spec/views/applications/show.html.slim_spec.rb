@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "applications/show", :type => :view do
+RSpec.describe "apps/show", :type => :view do
   before(:each) do
-    @application = assign(:application, Application.create!(
+    @app = assign(:app, App.create!(
       :name => "Name",
       :description => "MyText",
       :host_group => "MyText",

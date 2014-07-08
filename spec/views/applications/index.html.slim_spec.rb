@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "applications/index", :type => :view do
+RSpec.describe "apps/index", :type => :view do
   before(:each) do
-    assign(:applications, [
-      Application.create!(
+    assign(:apps, [
+      App.create!(
         :name => "Name",
         :description => "MyText",
         :host_group => "MyText",
         :metadata => ""
       ),
-      Application.create!(
+      App.create!(
         :name => "Name",
         :description => "MyText",
         :host_group => "MyText",
@@ -18,7 +18,7 @@ RSpec.describe "applications/index", :type => :view do
     ])
   end
 
-  it "renders a list of applications" do
+  it "renders a list of apps" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "MyText".to_s, :count => 2

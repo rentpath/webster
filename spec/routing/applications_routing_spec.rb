@@ -1,34 +1,34 @@
 require "rails_helper"
 
-RSpec.describe ApplicationsController, :type => :routing do
+RSpec.describe AppsController, :type => :routing do
   describe "routing" do
 
     it "routes to #index" do
-      expect(:get => "/applications").to route_to("applications#index")
+      expect(:get => "/apps").to route_to("apps#index")
     end
 
     it "routes to #new" do
-      expect(:get => "/applications/new").to route_to("applications#new")
+      expect(:get => "/apps/new").to route_to("apps#new")
     end
 
     it "routes to #show" do
-      expect(:get => "/applications/1").to route_to("applications#show", :id => "1")
+      expect(:get => "/apps/1").to route_to("apps#show", :id => "1")
     end
 
     it "routes to #edit" do
-      expect(:get => "/applications/1/edit").to route_to("applications#edit", :id => "1")
+      expect(:get => "/apps/1/edit").to route_to("apps#edit", :id => "1")
     end
 
     it "routes to #create" do
-      expect(:post => "/applications").to route_to("applications#create")
+      expect(:post => "/apps").to route_to("apps#create")
     end
 
     it "routes to #update" do
-      expect(:put => "/applications/1").to route_to("applications#update", :id => "1")
+      expect(:put => "/apps/1").to route_to("apps#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      expect(:delete => "/applications/1").to route_to("applications#destroy", :id => "1")
+      expect(:delete => "/apps/1").to route_to("apps#destroy", :id => "1")
     end
 
   end

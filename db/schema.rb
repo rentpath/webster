@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630145410) do
+ActiveRecord::Schema.define(version: 20140708172419) do
 
-  create_table "applications", force: true do |t|
+  create_table "apps", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.text     "host_group"

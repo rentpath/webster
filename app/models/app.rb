@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: applications
+# Table name: apps
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
@@ -11,7 +11,7 @@
 #  updated_at  :datetime
 #
 
-class Application < ActiveRecord::Base
+class App < ActiveRecord::Base
   serialize :metadata
   # Metadata should be json
 end

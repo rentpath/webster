@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: applications
+# Table name: apps
 #
 #  id          :integer          not null, primary key
 #  name        :string(255)
@@ -13,6 +13,6 @@
 
 require 'rails_helper'
 
-RSpec.describe Application, :type => :model do
+RSpec.describe App, :type => :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end

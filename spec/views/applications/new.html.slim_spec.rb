@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "applications/new", :type => :view do
+RSpec.describe "apps/new", :type => :view do
   before(:each) do
-    assign(:application, Application.new(
+    assign(:app, App.new(
       :name => "MyString",
       :description => "MyText",
       :host_group => "MyText",
@@ -10,18 +10,18 @@ RSpec.describe "applications/new", :type => :view do
     ))
   end
 
-  it "renders new application form" do
+  it "renders new app form" do
     render
 
-    assert_select "form[action=?][method=?]", applications_path, "post" do
+    assert_select "form[action=?][method=?]", apps_path, "post" do
 
-      assert_select "input#application_name[name=?]", "application[name]"
+      assert_select "input#app_name[name=?]", "app[name]"
 
-      assert_select "textarea#application_description[name=?]", "application[description]"
+      assert_select "textarea#app_description[name=?]", "app[description]"
 
-      assert_select "textarea#application_host_group[name=?]", "application[host_group]"
+      assert_select "textarea#app_host_group[name=?]", "app[host_group]"
 
-      assert_select "input#application_metadata[name=?]", "application[metadata]"
+      assert_select "input#app_metadata[name=?]", "app[metadata]"
     end
   end
 end

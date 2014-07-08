@@ -18,10 +18,10 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe ApplicationsController, :type => :controller do
+RSpec.describe AppsController, :type => :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Application. As you add validations to Application, be sure to
+  # App. As you add validations to App, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -33,68 +33,68 @@ RSpec.describe ApplicationsController, :type => :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # ApplicationsController. Be sure to keep this updated too.
+  # AppsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all applications as @applications" do
-      application = Application.create! valid_attributes
+    it "assigns all apps as @apps" do
+      app = App.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:applications)).to eq([application])
+      expect(assigns(:apps)).to eq([app])
     end
   end
 
   describe "GET show" do
-    it "assigns the requested application as @application" do
-      application = Application.create! valid_attributes
-      get :show, {:id => application.to_param}, valid_session
-      expect(assigns(:application)).to eq(application)
+    it "assigns the requested app as @app" do
+      app = App.create! valid_attributes
+      get :show, {:id => app.to_param}, valid_session
+      expect(assigns(:app)).to eq(app)
     end
   end
 
   describe "GET new" do
-    it "assigns a new application as @application" do
+    it "assigns a new app as @app" do
       get :new, {}, valid_session
-      expect(assigns(:application)).to be_a_new(Application)
+      expect(assigns(:app)).to be_a_new(App)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested application as @application" do
-      application = Application.create! valid_attributes
-      get :edit, {:id => application.to_param}, valid_session
-      expect(assigns(:application)).to eq(application)
+    it "assigns the requested app as @app" do
+      app = App.create! valid_attributes
+      get :edit, {:id => app.to_param}, valid_session
+      expect(assigns(:app)).to eq(app)
     end
   end
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Application" do
+      it "creates a new App" do
         expect {
-          post :create, {:application => valid_attributes}, valid_session
-        }.to change(Application, :count).by(1)
+          post :create, {:app => valid_attributes}, valid_session
+        }.to change(App, :count).by(1)
       end
 
-      it "assigns a newly created application as @application" do
-        post :create, {:application => valid_attributes}, valid_session
-        expect(assigns(:application)).to be_a(Application)
-        expect(assigns(:application)).to be_persisted
+      it "assigns a newly created app as @app" do
+        post :create, {:app => valid_attributes}, valid_session
+        expect(assigns(:app)).to be_a(App)
+        expect(assigns(:app)).to be_persisted
       end
 
-      it "redirects to the created application" do
-        post :create, {:application => valid_attributes}, valid_session
-        expect(response).to redirect_to(Application.last)
+      it "redirects to the created app" do
+        post :create, {:app => valid_attributes}, valid_session
+        expect(response).to redirect_to(App.last)
       end
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved application as @application" do
-        post :create, {:application => invalid_attributes}, valid_session
-        expect(assigns(:application)).to be_a_new(Application)
+      it "assigns a newly created but unsaved app as @app" do
+        post :create, {:app => invalid_attributes}, valid_session
+        expect(assigns(:app)).to be_a_new(App)
       end
 
       it "re-renders the 'new' template" do
-        post :create, {:application => invalid_attributes}, valid_session
+        post :create, {:app => invalid_attributes}, valid_session
         expect(response).to render_template("new")
       end
     end
@@ -106,53 +106,53 @@ RSpec.describe ApplicationsController, :type => :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested application" do
-        application = Application.create! valid_attributes
-        put :update, {:id => application.to_param, :application => new_attributes}, valid_session
-        application.reload
+      it "updates the requested app" do
+        app = App.create! valid_attributes
+        put :update, {:id => app.to_param, :app => new_attributes}, valid_session
+        app.reload
         skip("Add assertions for updated state")
       end
 
-      it "assigns the requested application as @application" do
-        application = Application.create! valid_attributes
-        put :update, {:id => application.to_param, :application => valid_attributes}, valid_session
-        expect(assigns(:application)).to eq(application)
+      it "assigns the requested app as @app" do
+        app = App.create! valid_attributes
+        put :update, {:id => app.to_param, :app => valid_attributes}, valid_session
+        expect(assigns(:app)).to eq(app)
       end
 
-      it "redirects to the application" do
-        application = Application.create! valid_attributes
-        put :update, {:id => application.to_param, :application => valid_attributes}, valid_session
-        expect(response).to redirect_to(application)
+      it "redirects to the app" do
+        app = App.create! valid_attributes
+        put :update, {:id => app.to_param, :app => valid_attributes}, valid_session
+        expect(response).to redirect_to(app)
       end
     end
 
     describe "with invalid params" do
-      it "assigns the application as @application" do
-        application = Application.create! valid_attributes
-        put :update, {:id => application.to_param, :application => invalid_attributes}, valid_session
-        expect(assigns(:application)).to eq(application)
+      it "assigns the app as @app" do
+        app = App.create! valid_attributes
+        put :update, {:id => app.to_param, :app => invalid_attributes}, valid_session
+        expect(assigns(:app)).to eq(app)
       end
 
       it "re-renders the 'edit' template" do
-        application = Application.create! valid_attributes
-        put :update, {:id => application.to_param, :application => invalid_attributes}, valid_session
+        app = App.create! valid_attributes
+        put :update, {:id => app.to_param, :app => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
     end
   end
 
   describe "DELETE destroy" do
-    it "destroys the requested application" do
-      application = Application.create! valid_attributes
+    it "destroys the requested app" do
+      app = App.create! valid_attributes
       expect {
-        delete :destroy, {:id => application.to_param}, valid_session
-      }.to change(Application, :count).by(-1)
+        delete :destroy, {:id => app.to_param}, valid_session
+      }.to change(App, :count).by(-1)
     end
 
-    it "redirects to the applications list" do
-      application = Application.create! valid_attributes
-      delete :destroy, {:id => application.to_param}, valid_session
-      expect(response).to redirect_to(applications_url)
+    it "redirects to the apps list" do
+      app = App.create! valid_attributes
+      delete :destroy, {:id => app.to_param}, valid_session
+      expect(response).to redirect_to(apps_url)
     end
   end
 

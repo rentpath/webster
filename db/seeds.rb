@@ -51,7 +51,7 @@ max_leases_2:
   yaml.values.each do |rec|
     metadata = {wiki_generator: {template_path: rec["wiki_path"],
                                  github_repository: rec["github_repository"]}}.to_json
-    Application.create(name: rec["id"],
+    App.create(name: rec["id"],
                     description: rec["name"],
                     metadata: metadata)
 
