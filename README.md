@@ -26,6 +26,62 @@ Web application that serves data relating to various applications.  Intended to 
 - If api blueprint is a horrible painful march
   - use this as fallback https://github.com/Apipie/apipie-rails
 
+## Overview
+
+```ruby
+# Register New App
+app = App.create(name: "ag", description: "ApartmentGuide", ...)
+
+# == Schema Information
+#
+# Table name: apps
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  description  :text
+#  host_group   :text
+#  metadata     :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  wiki_path    :string(255)
+#  primary_team :string(255)
+#
+
+# Register the repo for app
+app.repos.create(...)
+
+# == Schema Information
+#
+# Table name: repos
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  organization :string(255)
+#  full_name    :string(255)
+#  public       :boolean          default(FALSE)
+#  created_at   :datetime
+#  updated_at   :datetime
+#  app_id       :integer
+#
+
+# Register which existing hooks apply to the repo
+app.repo.hooks.create(...)
+
+# == Schema Information
+#
+# Table name: hooks
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  payload    :text
+#  created_at :datetime
+#  updated_at :datetime
+#  repo_id    :integer
+#
+```
+
+
+
 
 Things you may want to cover:
 
