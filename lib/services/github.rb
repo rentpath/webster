@@ -31,7 +31,7 @@ class Github
   memoize :teams
 
   def team_by_field(organization, value, field = :name)
-    teams(organization).select { |t| t.public_send(field).to_s =~ /#{value}/i }.first
+    select_by_field.call(:teams, organization, value, field)
   end
   memoize :team_by_field
 
@@ -39,6 +39,17 @@ class Github
     client.hooks(full_name)
   end
   memoize :hooks
+
+  def hooks_by_field(full_name, value, field = :name)
+    select_by_field.call(:hooks, full_name, value, field)
+  end
+  memoize :hooks_by_field
+
+  def select_by_field
+    ->(method, arg, value, field) do
+      send(method, arg).select { |t| t.public_send(field).to_s =~ /#{value}/i }.first
+    end
+  end
 
   def create_hook!(full_name, hook)
     unless hook.respond_to?(:name) && hook.respond_to?(:payload)
