@@ -80,6 +80,12 @@ app.repo.hooks.create(...)
 #
 ```
 
+## Interactors
+
+We use interactor gem to encapsulate logical processes into small components.
+
+SetupGithub (organizer): verify existence of repo, or create
+SetupHooks (organizer): AddHooks, AddCollaborators
 
 
 

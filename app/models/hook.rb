@@ -12,4 +12,19 @@
 
 class Hook < ActiveRecord::Base
   belongs_to :repo
+  before_validation :coerce_payload
+  serialize :payload
+
+  private
+
+  def default_coercion
+    ->(payload){ JSON.parse(payload, symbolize_names: true)}
+  end
+
+  def coerce_payload(fn = default_coercion)
+    payload = self.payload
+    if payload.class == String
+      self.payload = fn.call(payload)
+    end
+  end
 end
