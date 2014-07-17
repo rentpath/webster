@@ -1,0 +1,14 @@
+# GET /repos/{id}
+
++ Response 200 application/json
+
+        {
+          "id": 135,
+          "name": "example_repo",
+          "organization": null,
+          "full_name": null,
+          "public": false,
+          "created_at": "2014-07-17T18:25:59.000Z",
+          "updated_at": "2014-07-17T18:25:59.000Z"
+        }
+

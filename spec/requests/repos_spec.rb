@@ -1,11 +1,12 @@
 require 'spec_helper'
 
-describe "Repos" do
-  describe "GET /repos" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get repos_path
-      response.status.should be(200)
+describe 'Repos Requests', type: :request do
+  describe 'GET /repos/{id}' do
+    it 'responds with the requested repo' do
+      repo = Repo.create( name: 'example_repo')
+      get "/repos/#{repo.id}.json", {}, {'Content-Type' => 'app/json'}
+
+      expect(response.status).to eq(200)
     end
   end
 end

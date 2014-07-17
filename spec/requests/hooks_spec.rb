@@ -1,11 +1,12 @@
 require 'spec_helper'
 
-describe "Hooks" do
-  describe "GET /hooks" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get hooks_path
-      response.status.should be(200)
+describe 'Hooks Requests', type: :request do
+  describe 'GET /hooks/{id}' do
+    it 'responds with the requested hook' do
+      hook = Hook.create( name: 'example_hook', payload: {arbitrary: "value"})
+      get "/hooks/#{hook.id}.json", {}, {'Content-Type' => 'app/json'}
+
+      expect(response.status).to eq(200)
     end
   end
 end

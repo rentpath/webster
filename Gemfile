@@ -13,6 +13,9 @@ gem 'environs'
 gem 'ops'
 gem 'simple_form'
 gem 'versionist'
+gem 'interactor-rails', '~> 1.0'
+gem 'octokit'
+gem 'memoist'
 
 # MAYBE REPLACE THIS??? IDK...
 # gem 'sqlite3'
@@ -26,6 +29,7 @@ group :development do
   gem 'rake'
   gem 'spring'
   gem 'rspec-rails', "< 3.0.0"
+  gem 'rspec-activemodel-mocks'
   gem 'rspec_api_blueprint', require: false, github: 'primedia/rspec_api_blueprint'
   gem 'pry-debugger'
   gem 'better_errors'
