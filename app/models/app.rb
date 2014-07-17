@@ -15,6 +15,19 @@
 
 class App < ActiveRecord::Base
   has_one :repo, dependent: :destroy
+  before_validation :coerce_metadata
   serialize :metadata
-  # Metadata should be json
+
+  private
+
+  def default_coercion
+    ->(json){ JSON.parse(json, symbolize_names: true)}
+  end
+
+  def coerce_metadata(fn = default_coercion)
+    metadata = self.metadata
+    if metadata.class == String
+      self.metadata = fn.call(metadata)
+    end
+  end
 end

@@ -11,7 +11,6 @@
 #
 
 class Hook < ActiveRecord::Base
-  belongs_to :repo
   before_validation :coerce_payload
   serialize :payload
 
