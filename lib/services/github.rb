@@ -40,16 +40,12 @@ class Github
   end
   memoize :hooks
 
-  def create_hook!(full_name, hook_name, payload)
-      # Payload
-      # {
-      #     :url => 'http://something.com/webhook',
-      #     :content_type => 'json'
-      #   },
-      # {
-      #       :events => ['push', 'pull_request'],
-      #       :active => true
-      #     }
-    client.create_hook(full_name, hook_name, payload)
+  def create_hook!(full_name, hook)
+    unless hook.respond_to?(:name) && hook.respond_to?(:payload)
+      raise(ArgumentError,
+            "#create_hook requires a Hook object with name and payload methods")
+    end
+
+    client.create_hook(full_name, hook.name, hook.payload)
   end
 end

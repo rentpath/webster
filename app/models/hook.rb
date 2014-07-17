@@ -14,6 +14,16 @@ class Hook < ActiveRecord::Base
   before_validation :coerce_payload
   serialize :payload
 
+  # Payload
+  # {
+  #     :url => 'http://something.com/webhook',
+  #     :content_type => 'json'
+  #   },
+  # {
+  #       :events => ['push', 'pull_request'],
+  #       :active => true
+  #     }
+
   private
 
   def default_coercion
