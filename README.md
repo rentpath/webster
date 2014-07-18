@@ -87,9 +87,7 @@ We use interactor gem to encapsulate logical processes into small components.
 SetupGithub (organizer): verify existence of repo, or create
 SetupHooks (organizer): AddHooks, AddCollaborators
 
-
-
-Things you may want to cover:
+## Things you may want to cover:
 
 * Ruby version
 

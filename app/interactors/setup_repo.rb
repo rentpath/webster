@@ -1,7 +1,10 @@
 class SetupRepo
-  include Interactor
+  include Interactor::Organizer
 
-  def perform
-    # TODO
-  end
+  # Requires context have following keys
+  # full_name, hook obj, organization, team
+  organize [
+            CreateOrUpdateRepo,
+            SetupHooks,
+           ]
 end
