@@ -13,6 +13,7 @@
 class Hook < ActiveRecord::Base
   before_validation :coerce_payload
   serialize :payload
+  belongs_to :repo
 
   # Payload
   # {

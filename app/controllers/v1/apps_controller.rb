@@ -64,7 +64,7 @@ class V1::AppsController < V1::BaseController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_app
-      @app = App.find(params[:id])
+      @app = App.includes(:repo).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

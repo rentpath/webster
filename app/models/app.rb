@@ -15,6 +15,7 @@
 
 class App < ActiveRecord::Base
   has_one :repo, dependent: :destroy
+  has_many :hooks, through: :repo
   before_validation :coerce_metadata
   serialize :metadata
 
