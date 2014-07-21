@@ -1,4 +1,4 @@
-class ReposController < ApplicationController
+class V1::ReposController < V1::BaseController
   before_action :set_repo, only: [:show, :edit, :update, :destroy]
 
   # GET /repos

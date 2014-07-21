@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resources :hooks
-
-  resources :repos
-
   api_version(:default => true, :module => "V1",  :path => {:value => "v1"}, :header => {:name => "Accept", :value => "application/vnd.primedia.com; version=1"}, :parameter => {:name => "version", :value => "1"}) do
     resources :apps
+    resources :hooks
+    resources :repos
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,4 +1,4 @@
-class HooksController < ApplicationController
+class V1::HooksController < V1::BaseController
   before_action :set_hook, only: [:show, :edit, :update, :destroy]
 
   # GET /hooks

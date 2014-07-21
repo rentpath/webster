@@ -3,12 +3,12 @@
 + Response 200 application/json
 
         {
-          "id": 23,
+          "id": 5,
           "name": "example_app",
           "description": null,
           "host_group": "ag-web",
           "metadata": null,
-          "created_at": "2014-07-17T18:25:59.000Z",
-          "updated_at": "2014-07-17T18:25:59.000Z"
+          "created_at": "2014-07-21T15:58:05.000Z",
+          "updated_at": "2014-07-21T15:58:05.000Z"
         }
 

@@ -1,12 +1,14 @@
-# GET /hooks/{id}
+# GET /v1/hooks/{id}
 
 + Response 200 application/json
 
         {
-          "id": 137,
+          "id": 67,
           "name": "example_hook",
-          "payload": "---\n:arbitrary: value\n",
-          "created_at": "2014-07-17T18:25:58.000Z",
-          "updated_at": "2014-07-17T18:25:58.000Z"
+          "payload": {
+            "arbitrary": "value"
+          },
+          "created_at": "2014-07-21T15:58:05.000Z",
+          "updated_at": "2014-07-21T15:58:05.000Z"
         }
 

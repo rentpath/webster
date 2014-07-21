@@ -18,7 +18,7 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe HooksController do
+describe V1::HooksController do
 
   # This should return the minimal set of attributes required to create a valid
   # Hook. As you add validations to Hook, be sure to
@@ -27,7 +27,7 @@ describe HooksController do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # HooksController. Be sure to keep this updated too.
+  # V1::HooksController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET index" do
