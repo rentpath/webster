@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140717200920) do
     t.text     "payload"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "repo_id"
   end
 
   create_table "repos", force: true do |t|
